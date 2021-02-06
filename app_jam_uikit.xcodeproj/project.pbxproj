@@ -21,6 +21,7 @@
 		338F38A925CF4253003B8D9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38A825CF4253003B8D9A /* Alamofire */; };
 		338F38AF25CF4282003B8D9A /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38AE25CF4282003B8D9A /* OHHTTPStubsSwift */; };
 		338F38B525CF42C6003B8D9A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38B425CF42C6003B8D9A /* SnapKit */; };
+		338F38BB25CF43E3003B8D9A /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38BA25CF43E3003B8D9A /* OAuth2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				338F389D25CF41DC003B8D9A /* Kingfisher in Frameworks */,
+				338F38BB25CF43E3003B8D9A /* OAuth2 in Frameworks */,
 				338F38A925CF4253003B8D9A /* Alamofire in Frameworks */,
 				338F389725CF41B7003B8D9A /* KeychainAccess in Frameworks */,
 				338F38B525CF42C6003B8D9A /* SnapKit in Frameworks */,
@@ -163,6 +165,7 @@
 				338F38A825CF4253003B8D9A /* Alamofire */,
 				338F38AE25CF4282003B8D9A /* OHHTTPStubsSwift */,
 				338F38B425CF42C6003B8D9A /* SnapKit */,
+				338F38BA25CF43E3003B8D9A /* OAuth2 */,
 			);
 			productName = app_jam_uikit;
 			productReference = 338F385325CF3AC9003B8D9A /* app_jam_uikit.app */;
@@ -242,6 +245,7 @@
 				338F38A725CF4253003B8D9A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				338F38AD25CF4282003B8D9A /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
 				338F38B325CF42C6003B8D9A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				338F38B925CF43E3003B8D9A /* XCRemoteSwiftPackageReference "OAuth2" */,
 			);
 			productRefGroup = 338F385425CF3AC9003B8D9A /* Products */;
 			projectDirPath = "";
@@ -663,6 +667,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		338F38B925CF43E3003B8D9A /* XCRemoteSwiftPackageReference "OAuth2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/p2/OAuth2";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -695,6 +707,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 338F38B325CF42C6003B8D9A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		338F38BA25CF43E3003B8D9A /* OAuth2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 338F38B925CF43E3003B8D9A /* XCRemoteSwiftPackageReference "OAuth2" */;
+			productName = OAuth2;
 		};
 /* End XCSwiftPackageProductDependency section */
 

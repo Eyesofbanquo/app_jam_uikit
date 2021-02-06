@@ -14,7 +14,6 @@
 		338F386325CF3ACC003B8D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 338F386225CF3ACC003B8D9A /* Assets.xcassets */; };
 		338F386625CF3ACC003B8D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338F386425CF3ACC003B8D9A /* LaunchScreen.storyboard */; };
 		338F387125CF3ACC003B8D9A /* app_jam_uikitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F387025CF3ACC003B8D9A /* app_jam_uikitTests.swift */; };
-		338F387C25CF3ACC003B8D9A /* app_jam_uikitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F387B25CF3ACC003B8D9A /* app_jam_uikitUITests.swift */; };
 		338F389725CF41B7003B8D9A /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 338F389625CF41B7003B8D9A /* KeychainAccess */; };
 		338F389D25CF41DC003B8D9A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 338F389C25CF41DC003B8D9A /* Kingfisher */; };
 		338F38A325CF4216003B8D9A /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38A225CF4216003B8D9A /* SwiftDate */; };
@@ -26,13 +25,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		338F386D25CF3ACC003B8D9A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 338F384B25CF3AC9003B8D9A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 338F385225CF3AC9003B8D9A;
-			remoteInfo = app_jam_uikit;
-		};
-		338F387825CF3ACC003B8D9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 338F384B25CF3AC9003B8D9A /* Project object */;
 			proxyType = 1;
@@ -53,9 +45,6 @@
 		338F386C25CF3ACC003B8D9A /* app_jam_uikitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_jam_uikitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338F387025CF3ACC003B8D9A /* app_jam_uikitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_jam_uikitTests.swift; sourceTree = "<group>"; };
 		338F387225CF3ACC003B8D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		338F387725CF3ACC003B8D9A /* app_jam_uikitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_jam_uikitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		338F387B25CF3ACC003B8D9A /* app_jam_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_jam_uikitUITests.swift; sourceTree = "<group>"; };
-		338F387D25CF3ACC003B8D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +69,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		338F387425CF3ACC003B8D9A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,7 +77,6 @@
 			children = (
 				338F385525CF3AC9003B8D9A /* app_jam_uikit */,
 				338F386F25CF3ACC003B8D9A /* app_jam_uikitTests */,
-				338F387A25CF3ACC003B8D9A /* app_jam_uikitUITests */,
 				338F385425CF3AC9003B8D9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,7 +86,6 @@
 			children = (
 				338F385325CF3AC9003B8D9A /* app_jam_uikit.app */,
 				338F386C25CF3ACC003B8D9A /* app_jam_uikitTests.xctest */,
-				338F387725CF3ACC003B8D9A /* app_jam_uikitUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,15 +111,6 @@
 				338F387225CF3ACC003B8D9A /* Info.plist */,
 			);
 			path = app_jam_uikitTests;
-			sourceTree = "<group>";
-		};
-		338F387A25CF3ACC003B8D9A /* app_jam_uikitUITests */ = {
-			isa = PBXGroup;
-			children = (
-				338F387B25CF3ACC003B8D9A /* app_jam_uikitUITests.swift */,
-				338F387D25CF3ACC003B8D9A /* Info.plist */,
-			);
-			path = app_jam_uikitUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,24 +160,6 @@
 			productReference = 338F386C25CF3ACC003B8D9A /* app_jam_uikitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		338F387625CF3ACC003B8D9A /* app_jam_uikitUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 338F388625CF3ACC003B8D9A /* Build configuration list for PBXNativeTarget "app_jam_uikitUITests" */;
-			buildPhases = (
-				338F387325CF3ACC003B8D9A /* Sources */,
-				338F387425CF3ACC003B8D9A /* Frameworks */,
-				338F387525CF3ACC003B8D9A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				338F387925CF3ACC003B8D9A /* PBXTargetDependency */,
-			);
-			name = app_jam_uikitUITests;
-			productName = app_jam_uikitUITests;
-			productReference = 338F387725CF3ACC003B8D9A /* app_jam_uikitUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,10 +173,6 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					338F386B25CF3ACC003B8D9A = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 338F385225CF3AC9003B8D9A;
-					};
-					338F387625CF3ACC003B8D9A = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 338F385225CF3AC9003B8D9A;
 					};
@@ -253,7 +202,6 @@
 			targets = (
 				338F385225CF3AC9003B8D9A /* app_jam_uikit */,
 				338F386B25CF3ACC003B8D9A /* app_jam_uikitTests */,
-				338F387625CF3ACC003B8D9A /* app_jam_uikitUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,13 +217,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		338F386A25CF3ACC003B8D9A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		338F387525CF3ACC003B8D9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,14 +245,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		338F387325CF3ACC003B8D9A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				338F387C25CF3ACC003B8D9A /* app_jam_uikitUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -319,11 +252,6 @@
 			isa = PBXTargetDependency;
 			target = 338F385225CF3AC9003B8D9A /* app_jam_uikit */;
 			targetProxy = 338F386D25CF3ACC003B8D9A /* PBXContainerItemProxy */;
-		};
-		338F387925CF3ACC003B8D9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 338F385225CF3AC9003B8D9A /* app_jam_uikit */;
-			targetProxy = 338F387825CF3ACC003B8D9A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -537,46 +465,6 @@
 			};
 			name = Release;
 		};
-		338F388725CF3ACC003B8D9A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W3P634BS8;
-				INFOPLIST_FILE = app_jam_uikitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.markimcodes.app-jam-uikitUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = app_jam_uikit;
-			};
-			name = Debug;
-		};
-		338F388825CF3ACC003B8D9A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W3P634BS8;
-				INFOPLIST_FILE = app_jam_uikitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.markimcodes.app-jam-uikitUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = app_jam_uikit;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -603,15 +491,6 @@
 			buildConfigurations = (
 				338F388425CF3ACC003B8D9A /* Debug */,
 				338F388525CF3ACC003B8D9A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		338F388625CF3ACC003B8D9A /* Build configuration list for PBXNativeTarget "app_jam_uikitUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				338F388725CF3ACC003B8D9A /* Debug */,
-				338F388825CF3ACC003B8D9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

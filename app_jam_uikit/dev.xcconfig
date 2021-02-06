@@ -7,9 +7,9 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-API_URL = "api.gyazo.com"
-API_CLIENT_ID = "695a8224edc18ed8c21890ae61740b1d3573239c14c36fab40dcb1e9d3acb73f"
-API_CLIENT_SECRET = "a5095320f68121a96c132e0d9b414ba393260986b90393c0d63c04f71d617060"
+API_URL = api.gyazo.com
+API_CLIENT_ID = 695a8224edc18ed8c21890ae61740b1d3573239c14c36fab40dcb1e9d3acb73f
+API_CLIENT_SECRET = a5095320f68121a96c132e0d9b414ba393260986b90393c0d63c04f71d617060
 //"com.donderapps.bristlekit://callback"
-API_CALLBACK_URL = "com.donderapps.bristlekit:"
-API_ACCESS_TOKEN = "5e39584f639ecf51120cc3be7e865938b261b23c64393b7c7e0ac1404779a422"
+API_CALLBACK_URL = com.donderapps.bristlekit:
+API_ACCESS_TOKEN = 5e39584f639ecf51120cc3be7e865938b261b23c64393b7c7e0ac1404779a422

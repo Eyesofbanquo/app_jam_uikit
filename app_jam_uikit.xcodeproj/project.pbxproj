@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,12 @@
 		338F386625CF3ACC003B8D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338F386425CF3ACC003B8D9A /* LaunchScreen.storyboard */; };
 		338F387125CF3ACC003B8D9A /* app_jam_uikitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F387025CF3ACC003B8D9A /* app_jam_uikitTests.swift */; };
 		338F387C25CF3ACC003B8D9A /* app_jam_uikitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F387B25CF3ACC003B8D9A /* app_jam_uikitUITests.swift */; };
+		338F389725CF41B7003B8D9A /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 338F389625CF41B7003B8D9A /* KeychainAccess */; };
+		338F389D25CF41DC003B8D9A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 338F389C25CF41DC003B8D9A /* Kingfisher */; };
+		338F38A325CF4216003B8D9A /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38A225CF4216003B8D9A /* SwiftDate */; };
+		338F38A925CF4253003B8D9A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38A825CF4253003B8D9A /* Alamofire */; };
+		338F38AF25CF4282003B8D9A /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38AE25CF4282003B8D9A /* OHHTTPStubsSwift */; };
+		338F38B525CF42C6003B8D9A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38B425CF42C6003B8D9A /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				338F389D25CF41DC003B8D9A /* Kingfisher in Frameworks */,
+				338F38A925CF4253003B8D9A /* Alamofire in Frameworks */,
+				338F389725CF41B7003B8D9A /* KeychainAccess in Frameworks */,
+				338F38B525CF42C6003B8D9A /* SnapKit in Frameworks */,
+				338F38AF25CF4282003B8D9A /* OHHTTPStubsSwift in Frameworks */,
+				338F38A325CF4216003B8D9A /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +156,14 @@
 			dependencies = (
 			);
 			name = app_jam_uikit;
+			packageProductDependencies = (
+				338F389625CF41B7003B8D9A /* KeychainAccess */,
+				338F389C25CF41DC003B8D9A /* Kingfisher */,
+				338F38A225CF4216003B8D9A /* SwiftDate */,
+				338F38A825CF4253003B8D9A /* Alamofire */,
+				338F38AE25CF4282003B8D9A /* OHHTTPStubsSwift */,
+				338F38B425CF42C6003B8D9A /* SnapKit */,
+			);
 			productName = app_jam_uikit;
 			productReference = 338F385325CF3AC9003B8D9A /* app_jam_uikit.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +235,14 @@
 				Base,
 			);
 			mainGroup = 338F384A25CF3AC9003B8D9A;
+			packageReferences = (
+				338F389525CF41B7003B8D9A /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				338F389B25CF41DC003B8D9A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				338F38A125CF4216003B8D9A /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				338F38A725CF4253003B8D9A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				338F38AD25CF4282003B8D9A /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+				338F38B325CF42C6003B8D9A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 338F385425CF3AC9003B8D9A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -585,6 +613,90 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		338F389525CF41B7003B8D9A /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.1;
+			};
+		};
+		338F389B25CF41DC003B8D9A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+		338F38A125CF4216003B8D9A /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+		338F38A725CF4253003B8D9A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+		338F38AD25CF4282003B8D9A /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+		338F38B325CF42C6003B8D9A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		338F389625CF41B7003B8D9A /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 338F389525CF41B7003B8D9A /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		338F389C25CF41DC003B8D9A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 338F389B25CF41DC003B8D9A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		338F38A225CF4216003B8D9A /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 338F38A125CF4216003B8D9A /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		338F38A825CF4253003B8D9A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 338F38A725CF4253003B8D9A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		338F38AE25CF4282003B8D9A /* OHHTTPStubsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 338F38AD25CF4282003B8D9A /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubsSwift;
+		};
+		338F38B425CF42C6003B8D9A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 338F38B325CF42C6003B8D9A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		338F385F25CF3AC9003B8D9A /* app_jam_uikit.xcdatamodeld */ = {

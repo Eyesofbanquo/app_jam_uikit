@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33719F0725D0808200C588C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33719F0625D0808200C588C8 /* LoginView.swift */; };
 		338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F385625CF3AC9003B8D9A /* AppDelegate.swift */; };
 		338F385925CF3AC9003B8D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F385825CF3AC9003B8D9A /* SceneDelegate.swift */; };
 		338F385B25CF3AC9003B8D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F385A25CF3AC9003B8D9A /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33719F0625D0808200C588C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		338F385325CF3AC9003B8D9A /* app_jam_uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_jam_uikit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		338F385625CF3AC9003B8D9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		338F385825CF3AC9003B8D9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33719F0525D0807400C588C8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				33719F0625D0808200C588C8 /* LoginView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		338F384A25CF3AC9003B8D9A = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		338F385525CF3AC9003B8D9A /* app_jam_uikit */ = {
 			isa = PBXGroup;
 			children = (
+				33719F0525D0807400C588C8 /* views */,
 				338F38DA25CF5874003B8D9A /* controllers */,
 				338F38CE25CF5492003B8D9A /* need */,
 				338F385625CF3AC9003B8D9A /* AppDelegate.swift */,
@@ -271,6 +282,7 @@
 				338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */,
 				338F385B25CF3AC9003B8D9A /* ViewController.swift in Sources */,
 				338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */,
+				33719F0725D0808200C588C8 /* LoginView.swift in Sources */,
 				338F38D125CF54AA003B8D9A /* Config.swift in Sources */,
 				338F385925CF3AC9003B8D9A /* SceneDelegate.swift in Sources */,
 				338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */,

@@ -11,6 +11,8 @@ import UIKit
 
 protocol LoginViewDelegate: AnyObject {
   func loginView(_ loginView: LoginViewControllerDelegate, didTapSignupButton: UIButton)
+  func loginView(_ loginView: LoginViewControllerDelegate, didTapLoginButton: UIButton)
+
 }
 
 protocol LoginViewControllerDelegate: AnyObject {
@@ -75,10 +77,23 @@ class LoginView: UIView, LoginViewControllerDelegate {
       make.trailing.equalTo(layoutMarginsGuide.snp.trailing)
       make.bottom.equalTo(layoutMarginsGuide.snp.bottom).offset(-8.0)
     }
+    
+    loginButton.addTarget(self, action: #selector(self.loginButtonTapped(_:forEvent:)), for: .touchUpInside)
+    signupButton.addTarget(self, action: #selector(self.signupButtonTapped(_:forEvent:)), for: .touchUpInside)
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
+}
+
+extension LoginView {
+  @objc private func signupButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
+    delegate?.loginView(self, didTapSignupButton: sender)
+  }
+  
+  @objc private func loginButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
+    delegate?.loginView(self, didTapLoginButton: sender)
+  }
 }

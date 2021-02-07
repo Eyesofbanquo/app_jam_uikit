@@ -31,6 +31,10 @@ final class LoginViewController: BaseViewController {
 
 extension LoginViewController: LoginViewDelegate {
   func loginView(_ loginView: LoginViewControllerDelegate, didTapSignupButton: UIButton) {
-    print("tapped")
+    print("tapped signup")
+  }
+  
+  func loginView(_ loginView: LoginViewControllerDelegate, didTapLoginButton: UIButton) {
+    print("tapped login")
   }
 }

@@ -23,6 +23,8 @@
 		338F38BB25CF43E3003B8D9A /* OAuth2 in Frameworks */ = {isa = PBXBuildFile; productRef = 338F38BA25CF43E3003B8D9A /* OAuth2 */; };
 		338F38D125CF54AA003B8D9A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38D025CF54AA003B8D9A /* Config.swift */; };
 		338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38D625CF54CC003B8D9A /* ConfigKey.swift */; };
+		338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38DB25CF588C003B8D9A /* LoginViewController.swift */; };
+		338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38E125CF5896003B8D9A /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		338F38C925CF511D003B8D9A /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
 		338F38D025CF54AA003B8D9A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		338F38D625CF54CC003B8D9A /* ConfigKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigKey.swift; sourceTree = "<group>"; };
+		338F38DB25CF588C003B8D9A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		338F38E125CF5896003B8D9A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 		338F385525CF3AC9003B8D9A /* app_jam_uikit */ = {
 			isa = PBXGroup;
 			children = (
+				338F38DA25CF5874003B8D9A /* controllers */,
 				338F38CE25CF5492003B8D9A /* need */,
 				338F385625CF3AC9003B8D9A /* AppDelegate.swift */,
 				338F385825CF3AC9003B8D9A /* SceneDelegate.swift */,
@@ -135,6 +140,15 @@
 				338F38D625CF54CC003B8D9A /* ConfigKey.swift */,
 			);
 			path = configuration;
+			sourceTree = "<group>";
+		};
+		338F38DA25CF5874003B8D9A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				338F38DB25CF588C003B8D9A /* LoginViewController.swift */,
+				338F38E125CF5896003B8D9A /* BaseViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,10 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */,
 				338F385B25CF3AC9003B8D9A /* ViewController.swift in Sources */,
 				338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */,
 				338F38D125CF54AA003B8D9A /* Config.swift in Sources */,
 				338F385925CF3AC9003B8D9A /* SceneDelegate.swift in Sources */,
+				338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */,
 				338F386125CF3AC9003B8D9A /* app_jam_uikit.xcdatamodeld in Sources */,
 				338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */,
 			);

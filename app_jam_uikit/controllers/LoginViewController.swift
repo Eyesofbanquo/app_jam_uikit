@@ -5,6 +5,7 @@
 //  Created by Markim Shaw on 2/6/21.
 //
 
+import Combine
 import Foundation
 import UIKit
 
@@ -12,6 +13,9 @@ final class LoginViewController: BaseViewController {
   lazy var viewDelegate: LoginViewControllerDelegate? = {
     LoginView()
   }()
+  
+  lazy var authenticator: Authenticator = Authenticator(for: .gyazo)
+  var returnFromAuthCancellable: AnyCancellable?
   
   init(viewDelegate: LoginViewControllerDelegate? = LoginView()) {
     super.init()
@@ -26,6 +30,28 @@ final class LoginViewController: BaseViewController {
   
   override func loadView() {
     self.view = viewDelegate?.view
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    setupCallbackFromOAuth()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    authenticator.authorize(in: self).sink { success in
+      print(success)
+    }
+  }
+  
+  private func setupCallbackFromOAuth() {
+    self.returnFromAuthCancellable = NotificationCenter.default.publisher(for: .returnFromAuth).sink { [weak self] notification in
+      guard let url = notification.userInfo?["url"] as? URL else { return } // needs error handling
+      
+      self?.authenticator.handleRedirect(url)
+    }
   }
 }
 

@@ -22,6 +22,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = window
     self.window?.makeKeyAndVisible()
   }
+  
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    if let url = URLContexts.first?.url,
+       let callbackUrl = try? Configuration.value(for: .apiCallbackUrl),
+       url.absoluteString.contains(callbackUrl) {
+      // Allow user to resume. post success
+      NotificationCenter.default.post(name: .returnFromAuth, object: nil, userInfo: ["url": url])
+    }
+  }
 
   func sceneDidDisconnect(_ scene: UIScene) {
     // Called as the scene is being released by the system.

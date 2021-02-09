@@ -15,7 +15,7 @@ final class LoginViewController: BaseViewController {
   }()
   
   lazy var authenticator: Authenticator = Authenticator(for: .gyazo)
-  var returnFromAuthCancellable: AnyCancellable?
+  lazy var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
   
   init(viewDelegate: LoginViewControllerDelegate? = LoginView()) {
     super.init()
@@ -40,18 +40,14 @@ final class LoginViewController: BaseViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
-    authenticator.authorize(in: self).sink { success in
-      print(success)
-    }
   }
   
   private func setupCallbackFromOAuth() {
-    self.returnFromAuthCancellable = NotificationCenter.default.publisher(for: .returnFromAuth).sink { [weak self] notification in
+    NotificationCenter.default.publisher(for: .returnFromAuth).sink { [weak self] notification in
       guard let url = notification.userInfo?["url"] as? URL else { return } // needs error handling
       
       self?.authenticator.handleRedirect(url)
-    }
+    }.store(in: &cancellables)
   }
 }
 
@@ -61,6 +57,8 @@ extension LoginViewController: LoginViewDelegate {
   }
   
   func loginView(_ loginView: LoginViewControllerDelegate, didTapLoginButton: UIButton) {
-    print("tapped login")
+    authenticator.authorize(in: self).sink { accessToken in
+      print(accessToken)
+    }.store(in: &cancellables)
   }
 }

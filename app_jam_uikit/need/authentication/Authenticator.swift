@@ -49,24 +49,22 @@ final class Authenticator {
     self.grant = try? type.grant()
   }
   
-  func authorize(in controller: UIViewController?) -> Future<Bool, Never> {
+  func authorize(in controller: UIViewController?) -> Future<String?, Never> {
     guard let controller = controller, let grant = self.grant else {
-      return Future<Bool, Never> { seal in
-        seal(.success(false))
+      return Future<String?, Never> { seal in
+        seal(.success(nil))
       }
     }
     
     grant.authConfig.authorizeEmbedded = true
     grant.authConfig.authorizeContext = controller
         
-    return Future<Bool, Never> { seal in
+    return Future<String?, Never> { seal in
       
       DispatchQueue.main.async {
         grant.authorize() { params, error in
           if let params = params, let accessToken = params["access_token"] as? String {
-//            Secure.keychain["access_token"] = accessToken
-            print(params, accessToken)
-            seal(.success(true))
+            seal(.success(accessToken))
           }
         }
       }

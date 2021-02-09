@@ -14,7 +14,7 @@ enum AuthenticatorTypeError: Error {
   case grantError(message: String)
 }
 
-enum AuthenticatorType {
+@objc enum AuthenticatorType: Int {
   case gyazo
   
   func grant() throws -> OAuth2CodeGrant? {
@@ -39,7 +39,7 @@ enum AuthenticatorType {
   }
 }
 
-final class Authenticator {
+final class Authenticator: Authenticatable {
   
   var grant: OAuth2CodeGrant?
   var type: AuthenticatorType

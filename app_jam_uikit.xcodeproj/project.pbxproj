@@ -29,6 +29,7 @@
 		338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38E125CF5896003B8D9A /* BaseViewController.swift */; };
 		33A7A62625D1FDCC00E652E2 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A62525D1FDCC00E652E2 /* Authenticator.swift */; };
 		33A7A62F25D2089D00E652E2 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */; };
+		33A7A63725D2256500E652E2 /* Authenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A63625D2256500E652E2 /* Authenticatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		338F38E125CF5896003B8D9A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		33A7A62525D1FDCC00E652E2 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		33A7A63625D2256500E652E2 /* Authenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				33A7A62525D1FDCC00E652E2 /* Authenticator.swift */,
+				33A7A63625D2256500E652E2 /* Authenticatable.swift */,
 			);
 			path = authentication;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				338F385925CF3AC9003B8D9A /* SceneDelegate.swift in Sources */,
 				338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */,
 				338F386125CF3AC9003B8D9A /* app_jam_uikit.xcdatamodeld in Sources */,
+				33A7A63725D2256500E652E2 /* Authenticatable.swift in Sources */,
 				338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

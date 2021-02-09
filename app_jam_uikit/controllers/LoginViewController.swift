@@ -14,7 +14,7 @@ final class LoginViewController: BaseViewController {
     LoginView()
   }()
   
-  lazy var authenticator: Authenticator = Authenticator(for: .gyazo)
+  lazy var authenticator: Authenticatable = Authenticator(for: .gyazo)
   lazy var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
   
   init(viewDelegate: LoginViewControllerDelegate? = LoginView()) {

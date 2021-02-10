@@ -30,6 +30,11 @@
 		33A7A62625D1FDCC00E652E2 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A62525D1FDCC00E652E2 /* Authenticator.swift */; };
 		33A7A62F25D2089D00E652E2 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */; };
 		33A7A63725D2256500E652E2 /* Authenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A63625D2256500E652E2 /* Authenticatable.swift */; };
+		33A7A63D25D22AD700E652E2 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A63C25D22AD700E652E2 /* Secure.swift */; };
+		33A7A64625D44E0600E652E2 /* Securable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64525D44E0600E652E2 /* Securable.swift */; };
+		33A7A64B25D44E1D00E652E2 /* SecureAccessLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */; };
+		33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64F25D44E4F00E652E2 /* SecurableError.swift */; };
+		33A7A65525D44EE200E652E2 /* SecurityKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A65425D44EE200E652E2 /* SecurityKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,12 @@
 		33A7A62525D1FDCC00E652E2 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		33A7A63625D2256500E652E2 /* Authenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticatable.swift; sourceTree = "<group>"; };
+		33A7A63C25D22AD700E652E2 /* Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
+		33A7A64125D22AEB00E652E2 /* app_jam_uikit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app_jam_uikit.entitlements; sourceTree = "<group>"; };
+		33A7A64525D44E0600E652E2 /* Securable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Securable.swift; sourceTree = "<group>"; };
+		33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAccessLevel.swift; sourceTree = "<group>"; };
+		33A7A64F25D44E4F00E652E2 /* SecurableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurableError.swift; sourceTree = "<group>"; };
+		33A7A65425D44EE200E652E2 /* SecurityKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +158,7 @@
 		338F385525CF3AC9003B8D9A /* app_jam_uikit */ = {
 			isa = PBXGroup;
 			children = (
+				33A7A64125D22AEB00E652E2 /* app_jam_uikit.entitlements */,
 				33719F0525D0807400C588C8 /* views */,
 				338F38DA25CF5874003B8D9A /* controllers */,
 				338F38CE25CF5492003B8D9A /* need */,
@@ -174,6 +186,7 @@
 		338F38CE25CF5492003B8D9A /* need */ = {
 			isa = PBXGroup;
 			children = (
+				33A7A63B25D22A9A00E652E2 /* security */,
 				33A7A62D25D2088700E652E2 /* notification */,
 				33A7A62425D1FD8F00E652E2 /* authentication */,
 				338F38CF25CF549B003B8D9A /* configuration */,
@@ -214,6 +227,18 @@
 				33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */,
 			);
 			path = notification;
+			sourceTree = "<group>";
+		};
+		33A7A63B25D22A9A00E652E2 /* security */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A63C25D22AD700E652E2 /* Secure.swift */,
+				33A7A64525D44E0600E652E2 /* Securable.swift */,
+				33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */,
+				33A7A64F25D44E4F00E652E2 /* SecurableError.swift */,
+				33A7A65425D44EE200E652E2 /* SecurityKey.swift */,
+			);
+			path = security;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,16 +398,21 @@
 			files = (
 				33A7A62F25D2089D00E652E2 /* Notification+Extension.swift in Sources */,
 				338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */,
+				33A7A64625D44E0600E652E2 /* Securable.swift in Sources */,
 				338F385B25CF3AC9003B8D9A /* ViewController.swift in Sources */,
 				338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */,
 				33719F0725D0808200C588C8 /* LoginView.swift in Sources */,
+				33A7A64B25D44E1D00E652E2 /* SecureAccessLevel.swift in Sources */,
 				338F38D125CF54AA003B8D9A /* Config.swift in Sources */,
+				33A7A65525D44EE200E652E2 /* SecurityKey.swift in Sources */,
 				33A7A62625D1FDCC00E652E2 /* Authenticator.swift in Sources */,
+				33A7A63D25D22AD700E652E2 /* Secure.swift in Sources */,
 				338F385925CF3AC9003B8D9A /* SceneDelegate.swift in Sources */,
 				338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */,
 				338F386125CF3AC9003B8D9A /* app_jam_uikit.xcdatamodeld in Sources */,
 				33A7A63725D2256500E652E2 /* Authenticatable.swift in Sources */,
 				338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */,
+				33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +612,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = app_jam_uikit/app_jam_uikit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2W3P634BS8;
 				INFOPLIST_FILE = app_jam_uikit/Info.plist;
@@ -601,6 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = app_jam_uikit/app_jam_uikit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2W3P634BS8;
 				INFOPLIST_FILE = app_jam_uikit/Info.plist;

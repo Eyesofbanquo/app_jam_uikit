@@ -14,14 +14,21 @@ final class LoginViewController: BaseViewController {
     LoginView()
   }()
   
-  lazy var authenticator: Authenticatable = Authenticator(for: .gyazo)
+  var authenticator: Authenticatable
+  var security: Securable
   lazy var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
   
-  init(viewDelegate: LoginViewControllerDelegate? = LoginView()) {
+  init(viewDelegate: LoginViewControllerDelegate? = LoginView(),
+       authenticator: Authenticatable = Authenticator(for: .gyazo),
+       security: Securable = Secure()) {
+    self.authenticator = authenticator
+    self.security = security
+    
     super.init()
     
     self.viewDelegate = viewDelegate
     self.viewDelegate?.delegate = self
+    
   }
   
   required init?(coder: NSCoder) {
@@ -57,8 +64,12 @@ extension LoginViewController: LoginViewDelegate {
   }
   
   func loginView(_ loginView: LoginViewControllerDelegate, didTapLoginButton: UIButton) {
-    authenticator.authorize(in: self).sink { accessToken in
-      print(accessToken)
+    authenticator.authorize(in: self).sink { [weak self] accessToken in
+      do {
+        try self?.security.save(key: .accessToken, value: accessToken, in: .keychain)
+      } catch let error {
+        print(error)
+      }
     }.store(in: &cancellables)
   }
 }

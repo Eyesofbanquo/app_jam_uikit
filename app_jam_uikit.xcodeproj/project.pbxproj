@@ -35,6 +35,9 @@
 		33A7A64B25D44E1D00E652E2 /* SecureAccessLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */; };
 		33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64F25D44E4F00E652E2 /* SecurableError.swift */; };
 		33A7A65525D44EE200E652E2 /* SecurityKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A65425D44EE200E652E2 /* SecurityKey.swift */; };
+		33A7A65D25D4590200E652E2 /* AuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A65C25D4590200E652E2 /* AuthMock.swift */; };
+		33A7A66525D4594500E652E2 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A66425D4594500E652E2 /* Mockable.swift */; };
+		33A7A66A25D45A1C00E652E2 /* SecureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A66925D45A1C00E652E2 /* SecureMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAccessLevel.swift; sourceTree = "<group>"; };
 		33A7A64F25D44E4F00E652E2 /* SecurableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurableError.swift; sourceTree = "<group>"; };
 		33A7A65425D44EE200E652E2 /* SecurityKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityKey.swift; sourceTree = "<group>"; };
+		33A7A65C25D4590200E652E2 /* AuthMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMock.swift; sourceTree = "<group>"; };
+		33A7A66425D4594500E652E2 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		33A7A66925D45A1C00E652E2 /* SecureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,8 @@
 		338F386F25CF3ACC003B8D9A /* app_jam_uikitTests */ = {
 			isa = PBXGroup;
 			children = (
+				33A7A65A25D458F000E652E2 /* need */,
+				33A7A65925D458D200E652E2 /* e2e */,
 				338F387025CF3ACC003B8D9A /* app_jam_uikitTests.swift */,
 				338F387225CF3ACC003B8D9A /* Info.plist */,
 			);
@@ -239,6 +247,31 @@
 				33A7A65425D44EE200E652E2 /* SecurityKey.swift */,
 			);
 			path = security;
+			sourceTree = "<group>";
+		};
+		33A7A65925D458D200E652E2 /* e2e */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = e2e;
+			sourceTree = "<group>";
+		};
+		33A7A65A25D458F000E652E2 /* need */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A65B25D458F600E652E2 /* mock */,
+			);
+			path = need;
+			sourceTree = "<group>";
+		};
+		33A7A65B25D458F600E652E2 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A65C25D4590200E652E2 /* AuthMock.swift */,
+				33A7A66425D4594500E652E2 /* Mockable.swift */,
+				33A7A66925D45A1C00E652E2 /* SecureMock.swift */,
+			);
+			path = mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,7 +453,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A7A66A25D45A1C00E652E2 /* SecureMock.swift in Sources */,
 				338F387125CF3ACC003B8D9A /* app_jam_uikitTests.swift in Sources */,
+				33A7A66525D4594500E652E2 /* Mockable.swift in Sources */,
+				33A7A65D25D4590200E652E2 /* AuthMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

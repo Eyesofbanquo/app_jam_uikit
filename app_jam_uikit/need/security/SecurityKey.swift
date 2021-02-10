@@ -9,4 +9,11 @@ import Foundation
 
 enum SecurityKey: String {
   case accessToken = "access_token"
+  
+  /// This is where the key *should* be stored.
+  var preferredDestination: SecureAccessLevel {
+    switch self {
+      case .accessToken: return .keychain
+    }
+  }
 }

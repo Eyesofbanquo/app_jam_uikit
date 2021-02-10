@@ -9,8 +9,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-  var window: UIWindow?
+  lazy var security: Securable = Secure()
 
+  var window: UIWindow?
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -18,9 +19,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     guard let scene = (scene as? UIWindowScene) else { return }
     let window = UIWindow(windowScene: scene)
-    window.rootViewController = LoginViewController()
+    window.rootViewController = appropriateRootViewController
     self.window = window
     self.window?.makeKeyAndVisible()
+  }
+  
+  var appropriateRootViewController: UIViewController? {
+    let accessToken: String? = try? security.retrieve(key: .accessToken)
+   
+    if accessToken != nil {
+      return ViewController()
+    }
+    
+    return LoginViewController()
   }
   
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

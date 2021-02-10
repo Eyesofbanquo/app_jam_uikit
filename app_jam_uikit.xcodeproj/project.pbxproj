@@ -27,6 +27,17 @@
 		338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38D625CF54CC003B8D9A /* ConfigKey.swift */; };
 		338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38DB25CF588C003B8D9A /* LoginViewController.swift */; };
 		338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F38E125CF5896003B8D9A /* BaseViewController.swift */; };
+		33A7A62625D1FDCC00E652E2 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A62525D1FDCC00E652E2 /* Authenticator.swift */; };
+		33A7A62F25D2089D00E652E2 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */; };
+		33A7A63725D2256500E652E2 /* Authenticatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A63625D2256500E652E2 /* Authenticatable.swift */; };
+		33A7A63D25D22AD700E652E2 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A63C25D22AD700E652E2 /* Secure.swift */; };
+		33A7A64625D44E0600E652E2 /* Securable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64525D44E0600E652E2 /* Securable.swift */; };
+		33A7A64B25D44E1D00E652E2 /* SecureAccessLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */; };
+		33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A64F25D44E4F00E652E2 /* SecurableError.swift */; };
+		33A7A65525D44EE200E652E2 /* SecurityKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A65425D44EE200E652E2 /* SecurityKey.swift */; };
+		33A7A65D25D4590200E652E2 /* AuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A65C25D4590200E652E2 /* AuthMock.swift */; };
+		33A7A66525D4594500E652E2 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A66425D4594500E652E2 /* Mockable.swift */; };
+		33A7A66A25D45A1C00E652E2 /* SecureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A66925D45A1C00E652E2 /* SecureMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +78,18 @@
 		338F38D625CF54CC003B8D9A /* ConfigKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigKey.swift; sourceTree = "<group>"; };
 		338F38DB25CF588C003B8D9A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		338F38E125CF5896003B8D9A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		33A7A62525D1FDCC00E652E2 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		33A7A63625D2256500E652E2 /* Authenticatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticatable.swift; sourceTree = "<group>"; };
+		33A7A63C25D22AD700E652E2 /* Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secure.swift; sourceTree = "<group>"; };
+		33A7A64125D22AEB00E652E2 /* app_jam_uikit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app_jam_uikit.entitlements; sourceTree = "<group>"; };
+		33A7A64525D44E0600E652E2 /* Securable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Securable.swift; sourceTree = "<group>"; };
+		33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAccessLevel.swift; sourceTree = "<group>"; };
+		33A7A64F25D44E4F00E652E2 /* SecurableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurableError.swift; sourceTree = "<group>"; };
+		33A7A65425D44EE200E652E2 /* SecurityKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityKey.swift; sourceTree = "<group>"; };
+		33A7A65C25D4590200E652E2 /* AuthMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMock.swift; sourceTree = "<group>"; };
+		33A7A66425D4594500E652E2 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		33A7A66925D45A1C00E652E2 /* SecureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +164,7 @@
 		338F385525CF3AC9003B8D9A /* app_jam_uikit */ = {
 			isa = PBXGroup;
 			children = (
+				33A7A64125D22AEB00E652E2 /* app_jam_uikit.entitlements */,
 				33719F0525D0807400C588C8 /* views */,
 				338F38DA25CF5874003B8D9A /* controllers */,
 				338F38CE25CF5492003B8D9A /* need */,
@@ -159,6 +183,8 @@
 		338F386F25CF3ACC003B8D9A /* app_jam_uikitTests */ = {
 			isa = PBXGroup;
 			children = (
+				33A7A65A25D458F000E652E2 /* need */,
+				33A7A65925D458D200E652E2 /* e2e */,
 				338F387025CF3ACC003B8D9A /* app_jam_uikitTests.swift */,
 				338F387225CF3ACC003B8D9A /* Info.plist */,
 			);
@@ -168,6 +194,9 @@
 		338F38CE25CF5492003B8D9A /* need */ = {
 			isa = PBXGroup;
 			children = (
+				33A7A63B25D22A9A00E652E2 /* security */,
+				33A7A62D25D2088700E652E2 /* notification */,
+				33A7A62425D1FD8F00E652E2 /* authentication */,
 				338F38CF25CF549B003B8D9A /* configuration */,
 			);
 			path = need;
@@ -189,6 +218,60 @@
 				338F38E125CF5896003B8D9A /* BaseViewController.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		33A7A62425D1FD8F00E652E2 /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A62525D1FDCC00E652E2 /* Authenticator.swift */,
+				33A7A63625D2256500E652E2 /* Authenticatable.swift */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		33A7A62D25D2088700E652E2 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A62E25D2089D00E652E2 /* Notification+Extension.swift */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
+		33A7A63B25D22A9A00E652E2 /* security */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A63C25D22AD700E652E2 /* Secure.swift */,
+				33A7A64525D44E0600E652E2 /* Securable.swift */,
+				33A7A64A25D44E1D00E652E2 /* SecureAccessLevel.swift */,
+				33A7A64F25D44E4F00E652E2 /* SecurableError.swift */,
+				33A7A65425D44EE200E652E2 /* SecurityKey.swift */,
+			);
+			path = security;
+			sourceTree = "<group>";
+		};
+		33A7A65925D458D200E652E2 /* e2e */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = e2e;
+			sourceTree = "<group>";
+		};
+		33A7A65A25D458F000E652E2 /* need */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A65B25D458F600E652E2 /* mock */,
+			);
+			path = need;
+			sourceTree = "<group>";
+		};
+		33A7A65B25D458F600E652E2 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				33A7A65C25D4590200E652E2 /* AuthMock.swift */,
+				33A7A66425D4594500E652E2 /* Mockable.swift */,
+				33A7A66925D45A1C00E652E2 /* SecureMock.swift */,
+			);
+			path = mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,15 +429,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A7A62F25D2089D00E652E2 /* Notification+Extension.swift in Sources */,
 				338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */,
+				33A7A64625D44E0600E652E2 /* Securable.swift in Sources */,
 				338F385B25CF3AC9003B8D9A /* ViewController.swift in Sources */,
 				338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */,
 				33719F0725D0808200C588C8 /* LoginView.swift in Sources */,
+				33A7A64B25D44E1D00E652E2 /* SecureAccessLevel.swift in Sources */,
 				338F38D125CF54AA003B8D9A /* Config.swift in Sources */,
+				33A7A65525D44EE200E652E2 /* SecurityKey.swift in Sources */,
+				33A7A62625D1FDCC00E652E2 /* Authenticator.swift in Sources */,
+				33A7A63D25D22AD700E652E2 /* Secure.swift in Sources */,
 				338F385925CF3AC9003B8D9A /* SceneDelegate.swift in Sources */,
 				338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */,
 				338F386125CF3AC9003B8D9A /* app_jam_uikit.xcdatamodeld in Sources */,
+				33A7A63725D2256500E652E2 /* Authenticatable.swift in Sources */,
 				338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */,
+				33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +453,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A7A66A25D45A1C00E652E2 /* SecureMock.swift in Sources */,
 				338F387125CF3ACC003B8D9A /* app_jam_uikitTests.swift in Sources */,
+				33A7A66525D4594500E652E2 /* Mockable.swift in Sources */,
+				33A7A65D25D4590200E652E2 /* AuthMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = app_jam_uikit/app_jam_uikit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2W3P634BS8;
 				INFOPLIST_FILE = app_jam_uikit/Info.plist;
@@ -573,6 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = app_jam_uikit/app_jam_uikit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2W3P634BS8;
 				INFOPLIST_FILE = app_jam_uikit/Info.plist;

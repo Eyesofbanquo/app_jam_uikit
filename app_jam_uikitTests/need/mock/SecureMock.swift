@@ -18,11 +18,11 @@ final class SecureMock: Securable, Mockable {
   var exp: XCTestExpectation?
   
 
-  func save(key: SecurityKey, value: Any?, in: SecureAccessLevel) throws -> Bool {
+  func save(key: SecurityKey, value: Any?) throws -> Bool {
     return true
   }
   
-  func retrieve<T>(key: SecurityKey, from: SecureAccessLevel) throws -> T? {
+  func retrieve<T>(key: SecurityKey) throws -> T? {
     return Self.MOCK_RETRIEVE as? T
   }
 }

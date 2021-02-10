@@ -17,18 +17,16 @@ fileprivate var keychain: Keychain = {
 
 class Secure: Securable {
   @discardableResult
-  func save(key: SecurityKey, value: Any?, in: SecureAccessLevel) throws -> Bool {
+  func save(key: SecurityKey, value: Any?) throws -> Bool {
     
-    let key = key.rawValue
-    
-    switch `in` {
+    switch key.preferredDestination {
       case .defaults:
-        defaults.setValue(value, forKey: key)
+        defaults.setValue(value, forKey: key.rawValue)
         return true
       case .keychain:
         do {
           if let stringValue = value as? String {
-            try keychain.set(stringValue, key: key)
+            try keychain.set(stringValue, key: key.rawValue)
             return true
           }
         } catch (let error) {
@@ -39,16 +37,14 @@ class Secure: Securable {
     return false
   }
   
-  func retrieve<T: Any>(key: SecurityKey, from: SecureAccessLevel) throws -> T? {
+  func retrieve<T: Any>(key: SecurityKey) throws -> T? {
     
-    let key = key.rawValue
-    
-    switch from {
+    switch key.preferredDestination {
       case .defaults:
-        return defaults.value(forKey: key) as? T
+        return defaults.value(forKey: key.rawValue) as? T
       case .keychain:
         do {
-          return try keychain.get(key) as? T
+          return try keychain.get(key.rawValue) as? T
         } catch (let error) {
           throw SecurableError.errorOnRetrieve(message: error.localizedDescription)
         }

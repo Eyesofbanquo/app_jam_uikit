@@ -66,7 +66,7 @@ extension LoginViewController: LoginViewDelegate {
   func loginView(_ loginView: LoginViewControllerDelegate, didTapLoginButton: UIButton) {
     authenticator.authorize(in: self).sink { [weak self] accessToken in
       do {
-        try self?.security.save(key: .accessToken, value: accessToken, in: .keychain)
+        try self?.security.save(key: .accessToken, value: accessToken)
       } catch let error {
         print(error)
       }

@@ -9,6 +9,6 @@ import Foundation
 
 protocol Securable {
   @discardableResult
-  func save(key: SecurityKey, value: Any?, in: SecureAccessLevel) throws -> Bool
-  func retrieve<T>(key: SecurityKey, from: SecureAccessLevel) throws -> T?
+  func save(key: SecurityKey, value: Any?) throws -> Bool
+  func retrieve<T>(key: SecurityKey) throws -> T?
 }

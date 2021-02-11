@@ -12,6 +12,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   lazy var security: Securable = Secure()
 
   var window: UIWindow?
+  
+  override init() {
+    super.init()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(self.setAppropriateRootViewController), name: .loggedIn, object: nil)
+  }
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -28,10 +34,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let accessToken: String? = try? security.retrieve(key: .accessToken)
    
     if accessToken != nil {
-      return ViewController()
+      return MainViewController()
     }
     
     return LoginViewController()
+  }
+  
+  @objc func setAppropriateRootViewController() {
+    guard let window = window else { return }
+    
+    let controller = appropriateRootViewController
+    
+    window.rootViewController = controller
+    window.makeKeyAndVisible()
+    
   }
   
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

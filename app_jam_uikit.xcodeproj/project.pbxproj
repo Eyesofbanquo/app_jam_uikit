@@ -38,6 +38,7 @@
 		33A7A65D25D4590200E652E2 /* AuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A65C25D4590200E652E2 /* AuthMock.swift */; };
 		33A7A66525D4594500E652E2 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A66425D4594500E652E2 /* Mockable.swift */; };
 		33A7A66A25D45A1C00E652E2 /* SecureMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A66925D45A1C00E652E2 /* SecureMock.swift */; };
+		33A7A67A25D523AF00E652E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A7A67925D523AF00E652E2 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		33A7A65C25D4590200E652E2 /* AuthMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMock.swift; sourceTree = "<group>"; };
 		33A7A66425D4594500E652E2 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		33A7A66925D45A1C00E652E2 /* SecureMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureMock.swift; sourceTree = "<group>"; };
+		33A7A67925D523AF00E652E2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			children = (
 				338F38DB25CF588C003B8D9A /* LoginViewController.swift */,
 				338F38E125CF5896003B8D9A /* BaseViewController.swift */,
+				33A7A67925D523AF00E652E2 /* MainViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				338F38E225CF5896003B8D9A /* BaseViewController.swift in Sources */,
 				338F386125CF3AC9003B8D9A /* app_jam_uikit.xcdatamodeld in Sources */,
 				33A7A63725D2256500E652E2 /* Authenticatable.swift in Sources */,
+				33A7A67A25D523AF00E652E2 /* MainViewController.swift in Sources */,
 				338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */,
 				33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */,
 			);

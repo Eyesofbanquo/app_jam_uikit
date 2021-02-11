@@ -67,6 +67,7 @@ extension LoginViewController: LoginViewDelegate {
     authenticator.authorize(in: self).sink { [weak self] accessToken in
       do {
         try self?.security.save(key: .accessToken, value: accessToken)
+        NotificationCenter.default.post(name: .loggedIn, object: nil)
       } catch let error {
         print(error)
       }

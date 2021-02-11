@@ -19,11 +19,17 @@ class ViewController: BaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.title = "Title"
 
     self.view.backgroundColor = .green
     if let url = try? Configuration.value(for: .apiClientId) {
       print(url, "yikes")
     }
+  }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    .lightContent
   }
 }
 

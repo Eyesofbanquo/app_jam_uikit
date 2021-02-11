@@ -47,6 +47,11 @@ final class LoginViewController: BaseViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+
+  }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    .darkContent
   }
   
   private func setupCallbackFromOAuth() {

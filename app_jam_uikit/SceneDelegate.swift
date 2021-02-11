@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let accessToken: String? = try? security.retrieve(key: .accessToken)
    
     if accessToken != nil {
-      return ViewController()
+      return MainViewController()
     }
     
     return LoginViewController()

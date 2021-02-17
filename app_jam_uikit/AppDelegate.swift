@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 import CoreData
 
 @main
@@ -13,6 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    let store = CoreStore(modelName: "app_jam_uikit")
+    do {
+      try store.prepare()
+    } catch {
+      return false
+    }
+    
     return true
   }
 

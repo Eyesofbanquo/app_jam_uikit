@@ -5,6 +5,7 @@
 //  Created by Markim Shaw on 2/13/21.
 //
 
+import Alamofire
 import Combine
 import CoreData
 import Foundation

@@ -4,7 +4,7 @@
         <attribute name="age" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Source" representedClassName="Source" syncable="YES" codeGenerationType="category">
+    <entity name="Source" representedClassName="Source" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="String"/>
         <attribute name="imageId" optional="YES" attributeType="String"/>
         <attribute name="thumbUrl" optional="YES" attributeType="String"/>

@@ -5,25 +5,28 @@
 //  Created by Markim Shaw on 2/13/21.
 //
 
+import Combine
 import CoreData
 import Foundation
 import UIKit
 
-class PersonViewModel: NSObject {
-  let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-  let request = Person.createFetchRequest()
-  var fetchedResultsController: NSFetchedResultsController<Person>!
-  lazy var store: CoreStore = CoreStore()
+protocol BaseViewModel: AnyObject {
+  associatedtype T: NSManagedObject & Fetchable
+  var store: CoreStore { get set }
+  var request: NSFetchRequest<T.T> { get set }
+  var fetchedResultsController: NSFetchedResultsController<T>! { get set }
+  func performFetch()
+}
+
+extension BaseViewModel where Self: NSObject & NSFetchedResultsControllerDelegate {
   
-  override init() {
-    super.init()
-    
-    request.sortDescriptors = [sortDescriptor]
-    
+  func prepare() {
     guard let container = store.container else { return }
     
-    fetchedResultsController = NSFetchedResultsController<Person>(fetchRequest: request, managedObjectContext: container.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-    fetchedResultsController.delegate = self
+    if let typedRequest = request as? NSFetchRequest<T> {
+      fetchedResultsController = NSFetchedResultsController<T>(fetchRequest: typedRequest, managedObjectContext: container.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+      fetchedResultsController.delegate = self
+    }
   }
   
   func performFetch() {
@@ -34,12 +37,39 @@ class PersonViewModel: NSObject {
     }
   }
   
-  
 }
 
-extension PersonViewModel: NSFetchedResultsControllerDelegate {
+class PersonViewModel<T: NSManagedObject & Fetchable>: NSObject, NSFetchedResultsControllerDelegate, BaseViewModel {
+    
+  let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+  var request = T.createFetchRequest()
+  var fetchedResultsController: NSFetchedResultsController<T>!
+  lazy var store: CoreStore = CoreStore()
+  lazy var notifyChanges: PassthroughSubject<Bool, Never> = PassthroughSubject<Bool, Never>()
+  
+  override init() {
+    super.init()
+    
+    request.sortDescriptors = [sortDescriptor]
+    
+    prepare()
+  }
+  
+  func add(_ person: Person) {
+    guard let container = store.container else { return }
+    
+    let newObject = Person()
+    newObject.age = 28
+    newObject.name = "Markim"
+    
+    _ = Person.createNewManagedObject(fromPerson: newObject, in: container.viewContext)
+    
+    store.saveContext()
+  }
+  
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
     // This will be used later on
+    notifyChanges.send(true)
   }
 }
 
@@ -76,7 +106,7 @@ final class PersonView: UIView {
     return cell
   }
   
-  lazy var viewModel = PersonViewModel()
+  lazy var viewModel: some BaseViewModel = PersonViewModel<Person>()
   
   
   override init(frame: CGRect) {
@@ -104,9 +134,12 @@ final class PersonView: UIView {
   }
   
   func updateSnapshot() {
-    var diffableDataSourceSnapshot = NSDiffableDataSourceSnapshot<PersonTableViewSection, Person>()
-    diffableDataSourceSnapshot.appendSections(PersonTableViewSection.allCases)
-    diffableDataSourceSnapshot.appendItems(viewModel.fetchedResultsController.fetchedObjects ?? [], toSection: .name)
-    diffableDataSource.apply(diffableDataSourceSnapshot)
+    if let fetchedObjects = viewModel.fetchedResultsController.fetchedObjects as? [Person] {
+      var diffableDataSourceSnapshot = NSDiffableDataSourceSnapshot<PersonTableViewSection, Person>()
+      diffableDataSourceSnapshot.appendSections(PersonTableViewSection.allCases)
+      diffableDataSourceSnapshot.appendItems(fetchedObjects, toSection: .name)
+      diffableDataSource.apply(diffableDataSourceSnapshot)
+    }
+    
   }
 }

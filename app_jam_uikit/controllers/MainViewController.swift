@@ -33,7 +33,6 @@ class NavigationController : UINavigationController {
       
       viewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "photo"), selectedImage: UIImage(systemName: "photo.fill"))
       
-      
       loginController.tabBarItem = UITabBarItem(title: "Login", image: UIImage(systemName: "livephoto"), selectedImage: UIImage(systemName: "livephoto.slash"))
       
       let controllerList = [viewController, loginController]

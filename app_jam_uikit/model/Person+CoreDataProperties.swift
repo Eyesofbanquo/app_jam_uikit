@@ -12,7 +12,7 @@ import CoreData
 
 extension Person {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<Person> {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Person> {
         return NSFetchRequest<Person>(entityName: "Person")
     }
 

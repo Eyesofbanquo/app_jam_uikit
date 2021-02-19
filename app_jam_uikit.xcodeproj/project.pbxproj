@@ -13,6 +13,8 @@
 		331953C225DF9876005E8FC0 /* GalleryViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953C125DF9876005E8FC0 /* GalleryViewControllerDelegate.swift */; };
 		331953C725DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953C625DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift */; };
 		331953CD25DF9EA6005E8FC0 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953CC25DF9EA6005E8FC0 /* UICollectionViewCell+.swift */; };
+		331953DF25DFA4E8005E8FC0 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953DE25DFA4E8005E8FC0 /* Source.swift */; };
+		331953E425DFA545005E8FC0 /* CodingUserInfoKey+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953E325DFA545005E8FC0 /* CodingUserInfoKey+.swift */; };
 		33719F0725D0808200C588C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33719F0625D0808200C588C8 /* LoginView.swift */; };
 		33719F1725D0926D00C588C8 /* app_jam_uikitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33719F1625D0926D00C588C8 /* app_jam_uikitUITests.swift */; };
 		338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F385625CF3AC9003B8D9A /* AppDelegate.swift */; };
@@ -76,6 +78,8 @@
 		331953C125DF9876005E8FC0 /* GalleryViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewControllerDelegate.swift; sourceTree = "<group>"; };
 		331953C625DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		331953CC25DF9EA6005E8FC0 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
+		331953DE25DFA4E8005E8FC0 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		331953E325DFA545005E8FC0 /* CodingUserInfoKey+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+.swift"; sourceTree = "<group>"; };
 		33719F0625D0808200C588C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		33719F1425D0926D00C588C8 /* app_jam_uikitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_jam_uikitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33719F1625D0926D00C588C8 /* app_jam_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_jam_uikitUITests.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				331953CC25DF9EA6005E8FC0 /* UICollectionViewCell+.swift */,
+				331953E325DFA545005E8FC0 /* CodingUserInfoKey+.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 			children = (
 				33A7A68125D5C08300E652E2 /* Person+CoreDataClass.swift */,
 				33A7A68225D5C08300E652E2 /* Person+CoreDataProperties.swift */,
+				331953DE25DFA4E8005E8FC0 /* Source.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -492,11 +498,13 @@
 				33A7A62F25D2089D00E652E2 /* Notification+Extension.swift in Sources */,
 				33A7A68325D5C08300E652E2 /* Person+CoreDataClass.swift in Sources */,
 				331953BD25DF9868005E8FC0 /* GalleryViewDelegate.swift in Sources */,
+				331953E425DFA545005E8FC0 /* CodingUserInfoKey+.swift in Sources */,
 				338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */,
 				33A7A64625D44E0600E652E2 /* Securable.swift in Sources */,
 				331953C725DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift in Sources */,
 				338F385B25CF3AC9003B8D9A /* ViewController.swift in Sources */,
 				338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */,
+				331953DF25DFA4E8005E8FC0 /* Source.swift in Sources */,
 				33719F0725D0808200C588C8 /* LoginView.swift in Sources */,
 				33B129AC25D874D70089D8D7 /* PersonViewController.swift in Sources */,
 				33A7A64B25D44E1D00E652E2 /* SecureAccessLevel.swift in Sources */,

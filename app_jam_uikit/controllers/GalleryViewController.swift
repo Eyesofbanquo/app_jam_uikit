@@ -22,6 +22,10 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
   
   lazy var store: CoreStore = CoreStore()
   
+  lazy var apiBuilder: GyazoAPIFactory = GyazoAPIFactory()
+  
+  // MARK: - Properties -
+  
   var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
   
   // MARK: - Lifecycle -
@@ -33,40 +37,17 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    var localAccessToken: String! = ""
-    /// Pull access token from `Keychain`.
-    do {
-      if let secureAccessToken: String? = try security.retrieve(key: .accessToken), let accessToken = secureAccessToken {
-        localAccessToken = accessToken
-        print(accessToken)
-      }
-    } catch (let error) {
-      print(error)
-    }
-    
-    /// Build URL
-    var urlComponents = URLComponents()
-    urlComponents.scheme = "https"
-    urlComponents.host = "api.gyazo.com"
-    urlComponents.path = "/api/images"
-    urlComponents.queryItems = [URLQueryItem(name: "access_token", value: localAccessToken)]
-    
-    /// Create url + request
-    if let url = urlComponents.url, var request = try? URLRequest(url: url, method: .get), let context = store.container?.viewContext {
-      print(url)
+    if var request = apiBuilder.createUrl(for: .images), let context = store.container?.viewContext {
       request.cachePolicy = .returnCacheDataElseLoad
       /// Make network call
-      AF.request(request).publishDecodable(type: [Source].self, decoder: JSONDecoder.decoder(withContext: context)).sink(receiveValue: { response in
-        
+      AF.request(request).publishDecodable(type: [Source].self, decoder: JSONDecoder.decoder(withContext: context)).sink(receiveValue: { [weak self] response in
         /// Retrieve data
         let result = try? response.result.get()
         print(result)
-        
         /// Optional: Save data into core data
         
       }).store(in: &cancellables)
     }
-    
     
   }
 }

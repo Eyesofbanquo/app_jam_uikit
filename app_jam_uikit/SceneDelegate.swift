@@ -32,12 +32,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   var appropriateRootViewController: UIViewController? {
     let accessToken: String? = try? security.retrieve(key: .accessToken)
-   
-    if accessToken != nil {
-      return MainViewController()
-    }
     
-    return LoginViewController()
+    return PersonViewController()
+   
+//    if accessToken != nil {
+//      return MainViewController()
+//    }
+//    
+//    return LoginViewController()
   }
   
   @objc func setAppropriateRootViewController() {

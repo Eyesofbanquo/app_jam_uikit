@@ -22,7 +22,7 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
   
   lazy var store: CoreStore = CoreStore()
   
-  lazy var apiBuilder: GyazoAPIFactory = GyazoAPIFactory()
+  lazy var apiBuilder: some APIFactory = GyazoAPIFactory<GyazoAPIEndpoint>()
   
   // MARK: - Properties -
   
@@ -37,7 +37,7 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if var request = apiBuilder.createUrl(for: .images), let context = store.container?.viewContext {
+    if var request = apiBuilder.createUrl(for: GyazoAPIEndpoint.images), let context = store.container?.viewContext {
       request.cachePolicy = .returnCacheDataElseLoad
       /// Make network call
       AF.request(request).publishDecodable(type: [Source].self, decoder: JSONDecoder.decoder(withContext: context)).sink(receiveValue: { [weak self] response in

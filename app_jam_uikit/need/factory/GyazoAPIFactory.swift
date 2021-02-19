@@ -7,8 +7,9 @@
 
 import Foundation
 
-protocol APIBuilder {
-  func buildUrl(for endpoint: Endpoint) -> URLRequest?
+protocol APIFactory {
+  associatedtype T: Endpoint
+  func createUrl<T: Endpoint>(for endpoint: T) -> URLRequest?
 }
 
 protocol Endpoint {
@@ -19,9 +20,9 @@ enum GyazoAPIEndpoint: String, Endpoint {
   case images
 }
 
-final class GyazoAPIFactory {
+final class GyazoAPIFactory<T: Endpoint>: APIFactory {
   
-  func createUrl(for endpoint: GyazoAPIEndpoint) -> URLRequest? {
+  func createUrl<T: Endpoint>(for endpoint: T) -> URLRequest? {
     let security = Secure()
     
     var localAccessToken: String! = ""

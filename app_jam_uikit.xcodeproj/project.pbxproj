@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331953B225DF9816005E8FC0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953B125DF9816005E8FC0 /* GalleryViewController.swift */; };
+		331953B725DF9840005E8FC0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953B625DF9840005E8FC0 /* GalleryView.swift */; };
+		331953BD25DF9868005E8FC0 /* GalleryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953BC25DF9868005E8FC0 /* GalleryViewDelegate.swift */; };
+		331953C225DF9876005E8FC0 /* GalleryViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953C125DF9876005E8FC0 /* GalleryViewControllerDelegate.swift */; };
+		331953C725DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953C625DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift */; };
+		331953CD25DF9EA6005E8FC0 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953CC25DF9EA6005E8FC0 /* UICollectionViewCell+.swift */; };
 		33719F0725D0808200C588C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33719F0625D0808200C588C8 /* LoginView.swift */; };
 		33719F1725D0926D00C588C8 /* app_jam_uikitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33719F1625D0926D00C588C8 /* app_jam_uikitUITests.swift */; };
 		338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F385625CF3AC9003B8D9A /* AppDelegate.swift */; };
@@ -64,6 +70,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		331953B125DF9816005E8FC0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		331953B625DF9840005E8FC0 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		331953BC25DF9868005E8FC0 /* GalleryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewDelegate.swift; sourceTree = "<group>"; };
+		331953C125DF9876005E8FC0 /* GalleryViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewControllerDelegate.swift; sourceTree = "<group>"; };
+		331953C625DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		331953CC25DF9EA6005E8FC0 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		33719F0625D0808200C588C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		33719F1425D0926D00C588C8 /* app_jam_uikitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_jam_uikitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33719F1625D0926D00C588C8 /* app_jam_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_jam_uikitUITests.swift; sourceTree = "<group>"; };
@@ -136,11 +148,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331953BB25DF9856005E8FC0 /* gallery-interface */ = {
+			isa = PBXGroup;
+			children = (
+				331953BC25DF9868005E8FC0 /* GalleryViewDelegate.swift */,
+				331953C125DF9876005E8FC0 /* GalleryViewControllerDelegate.swift */,
+			);
+			path = "gallery-interface";
+			sourceTree = "<group>";
+		};
+		331953CB25DF9E9A005E8FC0 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				331953CC25DF9EA6005E8FC0 /* UICollectionViewCell+.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		33719F0525D0807400C588C8 /* views */ = {
 			isa = PBXGroup;
 			children = (
 				33719F0625D0808200C588C8 /* LoginView.swift */,
 				33B129B325D875020089D8D7 /* PersonView.swift */,
+				331953B625DF9840005E8FC0 /* GalleryView.swift */,
+				331953C625DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -209,6 +240,8 @@
 		338F38CE25CF5492003B8D9A /* need */ = {
 			isa = PBXGroup;
 			children = (
+				331953CB25DF9E9A005E8FC0 /* extension */,
+				331953BB25DF9856005E8FC0 /* gallery-interface */,
 				33A7A63B25D22A9A00E652E2 /* security */,
 				33A7A62D25D2088700E652E2 /* notification */,
 				33A7A62425D1FD8F00E652E2 /* authentication */,
@@ -233,6 +266,7 @@
 				338F38E125CF5896003B8D9A /* BaseViewController.swift */,
 				33A7A67925D523AF00E652E2 /* MainViewController.swift */,
 				33B129AB25D874D70089D8D7 /* PersonViewController.swift */,
+				331953B125DF9816005E8FC0 /* GalleryViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -457,8 +491,10 @@
 			files = (
 				33A7A62F25D2089D00E652E2 /* Notification+Extension.swift in Sources */,
 				33A7A68325D5C08300E652E2 /* Person+CoreDataClass.swift in Sources */,
+				331953BD25DF9868005E8FC0 /* GalleryViewDelegate.swift in Sources */,
 				338F38DC25CF588C003B8D9A /* LoginViewController.swift in Sources */,
 				33A7A64625D44E0600E652E2 /* Securable.swift in Sources */,
+				331953C725DF9CF8005E8FC0 /* GalleryCollectionViewCell.swift in Sources */,
 				338F385B25CF3AC9003B8D9A /* ViewController.swift in Sources */,
 				338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */,
 				33719F0725D0808200C588C8 /* LoginView.swift in Sources */,
@@ -476,8 +512,12 @@
 				33A7A67A25D523AF00E652E2 /* MainViewController.swift in Sources */,
 				33B129B425D875020089D8D7 /* PersonView.swift in Sources */,
 				338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */,
+				331953C225DF9876005E8FC0 /* GalleryViewControllerDelegate.swift in Sources */,
+				331953B225DF9816005E8FC0 /* GalleryViewController.swift in Sources */,
+				331953CD25DF9EA6005E8FC0 /* UICollectionViewCell+.swift in Sources */,
 				33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */,
 				33A7A68925D5C89E00E652E2 /* CoreStack.swift in Sources */,
+				331953B725DF9840005E8FC0 /* GalleryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

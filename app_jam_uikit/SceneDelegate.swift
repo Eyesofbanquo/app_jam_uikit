@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var appropriateRootViewController: UIViewController? {
     let accessToken: String? = try? security.retrieve(key: .accessToken)
     
-    return PersonViewController()
+    return GalleryViewController()
    
 //    if accessToken != nil {
 //      return MainViewController()

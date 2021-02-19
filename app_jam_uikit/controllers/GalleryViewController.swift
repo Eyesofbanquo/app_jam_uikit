@@ -57,8 +57,12 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
       request.cachePolicy = .returnCacheDataElseLoad
       /// Make network call
       AF.request(request).publishDecodable(type: [Source].self, decoder: JSONDecoder.decoder(withContext: context)).sink(receiveValue: { response in
+        
+        /// Retrieve data
         let result = try? response.result.get()
         print(result)
+        
+        /// Optional: Save data into core data
         
       }).store(in: &cancellables)
     }

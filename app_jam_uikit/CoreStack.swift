@@ -9,7 +9,6 @@ import Combine
 import CoreData
 import Foundation
 
-fileprivate var storeContainer: NSPersistentContainer?
 
 enum CoreStoreError: Error {
   case persistentContainerAlreadyExists
@@ -19,11 +18,14 @@ enum CoreStoreError: Error {
 
 class CoreStore {
   
+  fileprivate static var storeContainer: NSPersistentContainer?
+
+  
   private let modelName: String
   
   /// Returns `nil` if the `CoreStore` hasn't called `prepare()`.
   var container: NSPersistentContainer? {
-    return storeContainer
+    return Self.storeContainer
   }
   
   init(modelName: String = "app_jam_uikit") {
@@ -31,7 +33,7 @@ class CoreStore {
   }
   
   func prepare() throws {
-    guard storeContainer == nil else { throw CoreStoreError.persistentContainerAlreadyExists }
+    guard Self.storeContainer == nil else { throw CoreStoreError.persistentContainerAlreadyExists }
     
     let container = NSPersistentContainer(name: self.modelName)
     
@@ -46,7 +48,7 @@ class CoreStore {
     
     guard errorMessage == nil else { throw CoreStoreError.loadPersistentStoresError }
     
-    storeContainer = container
+    Self.storeContainer = container
   }
   
   func saveContext () {

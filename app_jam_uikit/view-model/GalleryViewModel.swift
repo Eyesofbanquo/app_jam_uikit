@@ -116,8 +116,10 @@ final class GalleryViewModel {
       .flatMap { $0 }
       .map { val -> GalleryViewControllerState in
         if let values = try? val.result.get() {
+          values.filter { $0.imageId == "" }.forEach { self.store.container?.viewContext.delete($0) }
+          let acceptableValues = values.filter { $0.imageId != "" }
           self.store.saveContext()
-          return .success(values)
+          return .success(acceptableValues)
         } else {
           return .noResults
         }

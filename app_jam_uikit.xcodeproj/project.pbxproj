@@ -87,6 +87,7 @@
 		331953ED25E06D36005E8FC0 /* GyazoAPIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyazoAPIFactory.swift; sourceTree = "<group>"; };
 		331953F625E07BF1005E8FC0 /* NetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBuilder.swift; sourceTree = "<group>"; };
 		331953FF25E0E65B005E8FC0 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		3319540725E11BBC005E8FC0 /* app_jam_uikit v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "app_jam_uikit v3.xcdatamodel"; sourceTree = "<group>"; };
 		33719F0625D0808200C588C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		33719F1425D0926D00C588C8 /* app_jam_uikitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_jam_uikitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33719F1625D0926D00C588C8 /* app_jam_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_jam_uikitUITests.swift; sourceTree = "<group>"; };
@@ -987,10 +988,11 @@
 		338F385F25CF3AC9003B8D9A /* app_jam_uikit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				3319540725E11BBC005E8FC0 /* app_jam_uikit v3.xcdatamodel */,
 				331953E825DFAD70005E8FC0 /* app_jam_uikit v2.xcdatamodel */,
 				338F386025CF3AC9003B8D9A /* app_jam_uikit.xcdatamodel */,
 			);
-			currentVersion = 331953E825DFAD70005E8FC0 /* app_jam_uikit v2.xcdatamodel */;
+			currentVersion = 3319540725E11BBC005E8FC0 /* app_jam_uikit v3.xcdatamodel */;
 			path = app_jam_uikit.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

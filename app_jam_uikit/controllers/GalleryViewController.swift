@@ -44,12 +44,14 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
     super.viewDidLoad()
     
     bind(to: viewModel)
+    
+    appear.send(true)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    appear.send(true)
+    reload.send(())
   }
   
   private func bind(to viewModel: GalleryViewModel) {
@@ -61,8 +63,16 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
                                       reload: reload.eraseToAnyPublisher())
     let output = viewModel.transform(input: input)
     
-    output.sink { state in
-      print(state)
+    output.sink { [weak self] state in
+      switch state {
+        case .success(let items):
+          if let items = items {
+            self?.customView.updateSnapshot(withItems: items)
+          }
+        case .selectedSource(let source):
+          print(source)
+        default: break
+      }
     }.store(in: &cancellables)
     
   }

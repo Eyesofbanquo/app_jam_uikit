@@ -14,4 +14,6 @@ protocol GalleryViewControllerDelegate {
   var view: UIView { get }
   
   var selection: PassthroughSubject<String?, Never> { get set }
+  
+  func updateSnapshot(withItems items: [Source])
 }

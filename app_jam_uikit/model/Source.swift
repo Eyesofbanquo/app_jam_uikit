@@ -26,6 +26,7 @@ class Source: NSManagedObject, Decodable {
     self.init(context: context)
     
     let container = try decoder.container(keyedBy: CodingKeys.self)
+    self.id = UUID()
     self.imageId = try container.decode(String.self, forKey: .imageId)
     self.thumbUrl = try container.decode(String.self, forKey: .thumbUrl)
     self.url = try container.decode(String.self, forKey: .url)

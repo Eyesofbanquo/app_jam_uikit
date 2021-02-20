@@ -38,9 +38,13 @@ final class GalleryViewModel {
   
   // MARK: - Lazy Properties -
   lazy var store = CoreStore()
-  lazy var sortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "imageId", ascending: false)
-  lazy var fetchRequest: NSFetchRequest<Source> = Source.fetchRequest()
+  lazy var sortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "id", ascending: false)
+  lazy var fetchRequest: NSFetchRequest<Source> = NSFetchRequest<Source>(entityName: "Source")
   lazy var apiBuilder: some APIFactory = GyazoAPIFactory<GyazoAPIEndpoint>()
+  
+  let sortDescriptors = NSSortDescriptor(key: "name", ascending: true)
+  var request = Person.createFetchRequest()
+  var fetchedResultsController: NSFetchedResultsController<Person>!
   
   // MARK - Properties -
   private var cancellables: [AnyCancellable] = []
@@ -49,10 +53,28 @@ final class GalleryViewModel {
   
   
   init() {
+    
+    
     self.fetchRequest.sortDescriptors = [sortDescriptor]
     guard let context = self.store.container?.viewContext else { return }
     
+//    let fetchRequests = NSFetchRequest<NSFetchRequestResult>(entityName: "Source")
+//
+//    // Create Batch Delete Request
+//    let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequests)
+//
+//    do {
+//      try context.execute(batchDeleteRequest)
+//
+//    } catch {
+//      // Error Handling
+//    }
+    
     self.fetchedController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    try? self.fetchedController.performFetch()
+    
+    
+    print(self.fetchedController.fetchedObjects)
   }
   
   func transform(input: GalleryViewModelInput) -> GalleryViewModelOutput {
@@ -68,8 +90,19 @@ final class GalleryViewModel {
       .map { value -> GalleryViewControllerState in .selectedSource(value)}
       .eraseToAnyPublisher()
     
-    let didAppear = input.appear.filter { $0 == true }
-    let b = didAppear
+    let didAppear = input.appear
+      .filter { $0 == true }
+      .compactMap { _ -> [Source]? in
+        return self.fetchedController.fetchedObjects
+      }
+      .map { objects -> GalleryViewControllerState in
+        return .success(objects)
+      }
+      .eraseToAnyPublisher()
+
+    
+    let reload = input
+      .reload
       .compactMap { [weak self] _ -> AnyPublisher<DataResponse<[Source], AFError>, Never>? in
         /// This logic could be tied to Actionables
         if let request = self?.apiBuilder.createUrl(for: GyazoAPIEndpoint.images), let context = self?.store.container?.viewContext {
@@ -83,6 +116,7 @@ final class GalleryViewModel {
       .flatMap { $0 }
       .map { val -> GalleryViewControllerState in
         if let values = try? val.result.get() {
+          self.store.saveContext()
           return .success(values)
         } else {
           return .noResults
@@ -92,6 +126,6 @@ final class GalleryViewModel {
     
     let initialState: GalleryViewModelOutput = Just(.idle).eraseToAnyPublisher()
     
-    return Publishers.MergeMany(initialState, b, didSelect).eraseToAnyPublisher()
+    return Publishers.MergeMany(initialState, didAppear, reload, didSelect).eraseToAnyPublisher()
   }
 }

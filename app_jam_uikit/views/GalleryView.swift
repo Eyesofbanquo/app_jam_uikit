@@ -30,9 +30,9 @@ class GalleryView: UIView, GalleryViewControllerDelegate {
   
   lazy var selection = PassthroughSubject<String?, Never>()
   
-  lazy var diffableDataSource = UICollectionViewDiffableDataSource<GalleryViewSection, Colorino>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
+  lazy var diffableDataSource = UICollectionViewDiffableDataSource<GalleryViewSection, Source>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseIdentifier, for: indexPath)
-    cell.backgroundColor = item.color
+    cell.backgroundColor = .red
     return cell
   }
   
@@ -51,28 +51,26 @@ class GalleryView: UIView, GalleryViewControllerDelegate {
   // MARK: - Layout -
   
   override func layoutSubviews() {
-    updateSnapshot(withItems: [.init(color: .black), .init(color: .green), .init(color: .red)])
+//    updateSnapshot(withItems: [.init(color: .black), .init(color: .green), .init(color: .red)])
   }
   
-  
+  func updateSnapshot(withItems items: [Source] = []) {
+    var diffableDataSourceSnapshot = NSDiffableDataSourceSnapshot<GalleryViewSection, Source>()
+    diffableDataSourceSnapshot.appendSections(GalleryViewSection.allCases)
+    diffableDataSourceSnapshot.appendItems(items, toSection: .gyazo)
+    diffableDataSource.apply(diffableDataSourceSnapshot)
+  }
 }
 
 extension GalleryView: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let datasource = diffableDataSource.snapshot()
-    selection.send("\(datasource.itemIdentifiers[indexPath.item].color)")
+    selection.send("\(datasource.itemIdentifiers[indexPath.item])")
   }
 }
 
 // MARK: - Private API -
 extension GalleryView {
-  
-  private func updateSnapshot(withItems items: [Colorino] = []) {
-    var diffableDataSourceSnapshot = NSDiffableDataSourceSnapshot<GalleryViewSection, Colorino>()
-    diffableDataSourceSnapshot.appendSections(GalleryViewSection.allCases)
-    diffableDataSourceSnapshot.appendItems(items, toSection: .gyazo)
-    diffableDataSource.apply(diffableDataSourceSnapshot)
-  }
   
   private func setupCollectionView() {
     addSubview(collectionView)

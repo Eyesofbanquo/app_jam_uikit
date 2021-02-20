@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol APIFactory {
+protocol APIFactory: AnyObject {
   associatedtype T: Endpoint
   func createUrl<T: Endpoint>(for endpoint: T) -> URLRequest?
 }

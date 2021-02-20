@@ -24,9 +24,15 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
   
   lazy var apiBuilder: some APIFactory = GyazoAPIFactory<GyazoAPIEndpoint>()
   
+  lazy var viewModel = GalleryViewModel()
+  
   // MARK: - Properties -
   
   var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
+  
+  let appear = PassthroughSubject<Bool, Never>()
+  let selection = PassthroughSubject<String?, Never>()
+  let reload = PassthroughSubject<Void, Never>()
   
   // MARK: - Lifecycle -
   
@@ -37,17 +43,27 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    if var request = apiBuilder.createUrl(for: GyazoAPIEndpoint.images), let context = store.container?.viewContext {
-      request.cachePolicy = .returnCacheDataElseLoad
-      /// Make network call
-      AF.request(request).publishDecodable(type: [Source].self, decoder: JSONDecoder.decoder(withContext: context)).sink(receiveValue: { [weak self] response in
-        /// Retrieve data
-        let result = try? response.result.get()
-        print(result)
-        /// Optional: Save data into core data
-        
-      }).store(in: &cancellables)
-    }
+    bind(to: viewModel)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    appear.send(true)
+  }
+  
+  private func bind(to viewModel: GalleryViewModel) {
+    cancellables.forEach { $0.cancel() }
+    cancellables.removeAll()
+    
+    let input = GalleryViewModelInput(appear: appear.eraseToAnyPublisher(),
+                                        selection: selection.eraseToAnyPublisher(),
+                                        reload: reload.eraseToAnyPublisher())
+    let output = viewModel.transform(input: input)
+    
+    output.sink { state in
+      print(state)
+    }.store(in: &cancellables)
     
   }
 }
@@ -55,3 +71,4 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
 extension GalleryViewController {
   
 }
+

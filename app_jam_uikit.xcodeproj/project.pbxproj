@@ -16,6 +16,8 @@
 		331953DF25DFA4E8005E8FC0 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953DE25DFA4E8005E8FC0 /* Source.swift */; };
 		331953E425DFA545005E8FC0 /* CodingUserInfoKey+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953E325DFA545005E8FC0 /* CodingUserInfoKey+.swift */; };
 		331953EE25E06D36005E8FC0 /* GyazoAPIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953ED25E06D36005E8FC0 /* GyazoAPIFactory.swift */; };
+		331953F725E07BF1005E8FC0 /* NetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953F625E07BF1005E8FC0 /* NetworkBuilder.swift */; };
+		3319540025E0E65B005E8FC0 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331953FF25E0E65B005E8FC0 /* GalleryViewModel.swift */; };
 		33719F0725D0808200C588C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33719F0625D0808200C588C8 /* LoginView.swift */; };
 		33719F1725D0926D00C588C8 /* app_jam_uikitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33719F1625D0926D00C588C8 /* app_jam_uikitUITests.swift */; };
 		338F385725CF3AC9003B8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F385625CF3AC9003B8D9A /* AppDelegate.swift */; };
@@ -83,6 +85,8 @@
 		331953E325DFA545005E8FC0 /* CodingUserInfoKey+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+.swift"; sourceTree = "<group>"; };
 		331953E825DFAD70005E8FC0 /* app_jam_uikit v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "app_jam_uikit v2.xcdatamodel"; sourceTree = "<group>"; };
 		331953ED25E06D36005E8FC0 /* GyazoAPIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyazoAPIFactory.swift; sourceTree = "<group>"; };
+		331953F625E07BF1005E8FC0 /* NetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBuilder.swift; sourceTree = "<group>"; };
+		331953FF25E0E65B005E8FC0 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		33719F0625D0808200C588C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		33719F1425D0926D00C588C8 /* app_jam_uikitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app_jam_uikitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33719F1625D0926D00C588C8 /* app_jam_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_jam_uikitUITests.swift; sourceTree = "<group>"; };
@@ -181,6 +185,22 @@
 			path = factory;
 			sourceTree = "<group>";
 		};
+		331953F525E07BE8005E8FC0 /* builder */ = {
+			isa = PBXGroup;
+			children = (
+				331953F625E07BF1005E8FC0 /* NetworkBuilder.swift */,
+			);
+			path = builder;
+			sourceTree = "<group>";
+		};
+		331953FE25E0E64A005E8FC0 /* view-model */ = {
+			isa = PBXGroup;
+			children = (
+				331953FF25E0E65B005E8FC0 /* GalleryViewModel.swift */,
+			);
+			path = "view-model";
+			sourceTree = "<group>";
+		};
 		33719F0525D0807400C588C8 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +244,7 @@
 		338F385525CF3AC9003B8D9A /* app_jam_uikit */ = {
 			isa = PBXGroup;
 			children = (
+				331953FE25E0E64A005E8FC0 /* view-model */,
 				33B129AA25D874B00089D8D7 /* model */,
 				33A7A64125D22AEB00E652E2 /* app_jam_uikit.entitlements */,
 				33719F0525D0807400C588C8 /* views */,
@@ -256,6 +277,7 @@
 		338F38CE25CF5492003B8D9A /* need */ = {
 			isa = PBXGroup;
 			children = (
+				331953F525E07BE8005E8FC0 /* builder */,
 				331953EC25E06D13005E8FC0 /* factory */,
 				331953CB25DF9E9A005E8FC0 /* extension */,
 				331953BB25DF9856005E8FC0 /* gallery-interface */,
@@ -532,12 +554,14 @@
 				33A7A67A25D523AF00E652E2 /* MainViewController.swift in Sources */,
 				33B129B425D875020089D8D7 /* PersonView.swift in Sources */,
 				338F38D725CF54CC003B8D9A /* ConfigKey.swift in Sources */,
+				3319540025E0E65B005E8FC0 /* GalleryViewModel.swift in Sources */,
 				331953C225DF9876005E8FC0 /* GalleryViewControllerDelegate.swift in Sources */,
 				331953B225DF9816005E8FC0 /* GalleryViewController.swift in Sources */,
 				331953EE25E06D36005E8FC0 /* GyazoAPIFactory.swift in Sources */,
 				331953CD25DF9EA6005E8FC0 /* UICollectionViewCell+.swift in Sources */,
 				33A7A65025D44E4F00E652E2 /* SecurableError.swift in Sources */,
 				33A7A68925D5C89E00E652E2 /* CoreStack.swift in Sources */,
+				331953F725E07BF1005E8FC0 /* NetworkBuilder.swift in Sources */,
 				331953B725DF9840005E8FC0 /* GalleryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

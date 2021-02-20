@@ -62,6 +62,7 @@ final class GalleryViewModel {
     cancellables.removeAll()
     
     let didSelect = input.selection
+      .handleEvents(receiveOutput: { print($0) })
       .map { [weak self] id in self?.fetchedController.fetchedObjects?.first(where: {$0.imageId == id})}
       .compactMap {  $0 }
       .map { value -> GalleryViewControllerState in .selectedSource(value)}

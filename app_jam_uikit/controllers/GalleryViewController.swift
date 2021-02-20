@@ -57,8 +57,8 @@ class GalleryViewController: BaseViewController, GalleryViewDelegate {
     cancellables.removeAll()
     
     let input = GalleryViewModelInput(appear: appear.eraseToAnyPublisher(),
-                                        selection: selection.eraseToAnyPublisher(),
-                                        reload: reload.eraseToAnyPublisher())
+                                      selection: customView.selection.eraseToAnyPublisher(),
+                                      reload: reload.eraseToAnyPublisher())
     let output = viewModel.transform(input: input)
     
     output.sink { state in

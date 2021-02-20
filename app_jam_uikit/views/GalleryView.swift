@@ -5,6 +5,7 @@
 //  Created by Markim Shaw on 2/19/21.
 //
 
+import Combine
 import Foundation
 import UIKit
 
@@ -17,7 +18,7 @@ struct Colorino: Hashable {
 }
 
 class GalleryView: UIView, GalleryViewControllerDelegate {
-  
+
   var view: UIView {
     return self
   }
@@ -26,6 +27,8 @@ class GalleryView: UIView, GalleryViewControllerDelegate {
   
   // MARK: - Lazy Properties -
   lazy var collectionView: UICollectionView = createCollectionView()
+  
+  lazy var selection = PassthroughSubject<String?, Never>()
   
   lazy var diffableDataSource = UICollectionViewDiffableDataSource<GalleryViewSection, Colorino>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseIdentifier, for: indexPath)
@@ -54,6 +57,13 @@ class GalleryView: UIView, GalleryViewControllerDelegate {
   
 }
 
+extension GalleryView: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let datasource = diffableDataSource.snapshot()
+    selection.send("\(datasource.itemIdentifiers[indexPath.item].color)")
+  }
+}
+
 // MARK: - Private API -
 extension GalleryView {
   
@@ -72,6 +82,8 @@ extension GalleryView {
       make.bottom.equalTo(layoutMarginsGuide.snp.bottom)
       make.top.equalTo(layoutMarginsGuide.snp.top)
     }
+    
+    self.collectionView.delegate = self
   }
   
   private func createCollectionView() -> UICollectionView {
